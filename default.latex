@@ -24,11 +24,16 @@ $for(classoption)$
   $classoption$$sep$,
 $endfor$
 ]{$documentclass$}
+$-- Remap section to enable section breaks
+\let\oldsection\subsection
+\renewcommand\subsection{\clearpage\oldsection}
+$-- Widen margins to 1"
 \addtolength{\oddsidemargin}{-.875in}
 \addtolength{\evensidemargin}{-.875in}
 \addtolength{\textwidth}{1.75in}
 \addtolength{\topmargin}{-.875in}
 \addtolength{\textheight}{1.75in}
+$-- Set font family stuff
 $if(fontfamily)$
 \usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
 $else$
